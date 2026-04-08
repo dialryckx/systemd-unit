@@ -1,0 +1,14 @@
+[Unit]
+Description=Python http server
+After=network.target
+
+[Service]
+User=boolymon
+WorkingDirectory=/home/boolymon/httpserver
+ExecStart=/usr/bin/python3 /home/boolymon/httpserver/httpserver.py
+Restart=on-failure
+RestartSec=5s
+MemoryMax=64M
+
+[Install]
+WantedBy=multi-user.target
