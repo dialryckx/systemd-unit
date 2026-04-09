@@ -4,7 +4,6 @@ SERVICE_NAME="httpserver.service"
 SOURCE_PATH="./$SERVICE_NAME"
 DEST_PATH="/etc/systemd/system/"
 
-# 1. Проверка наличия исходного файла
 if [ ! -f "$SOURCE_PATH" ]; then
     echo "Error: File $SOURCE_NAME not found in $SOURCE_PATH"
     exit 1
@@ -22,7 +21,6 @@ sudo systemctl daemon-reload
 echo "Enabling autostart..."
 sudo systemctl enable "$SERVICE_NAME"
 
-# 6. Запуск службы прямо сейчас
 echo "Starting service..."
 sudo systemctl start "$SERVICE_NAME"
 
